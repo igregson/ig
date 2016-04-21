@@ -1,0 +1,111 @@
+extends ./_layoutMain
+
+block mainPageContent
+  //- .contain(style="max-width:800px")
+  .contain
+
+    header.mt2.mb5
+      .left
+        h1.h3.mb0 Isaac Gregson
+        h2.h5.t-caps.mb1 Front-end Developer
+        p.t-small.mb0 (704) 516-5751
+        p.t-small.mb0: a(href="mailto:isaac@isaacgregson.com") isaac@isaacgregson.com
+      .right
+        img(src="/assets/avatar.jpg" style="width: 100px; border-radius: 50%")
+      .clear
+      .hr--light.mt2.mb3
+
+    main
+
+      //- STRENGTHS
+      section.section
+        h3.section--heading Strengths
+        .section--body
+          ul
+            li Communicating clearly and proactively
+            li Implementing best practices
+            li Learning and adopting new technologies (quickly)
+            li Working independently <i>and</i> as part of a team
+            li Choosing the right tool/approach for the job
+
+      //- SKILLS
+      section.section
+        h3.section--heading Skills
+        .section--body
+          ul
+            li CSS & pre-processors (Stylus and Sass)
+            li HTML & pre-processors (Jade, Twig, Liquid, HAML, Ace, and others)
+            li Javascript (with or without jQuery, Browserify as preferred bundler)
+            li Development workflows and build setups (via gulp/npm)
+            li SVG (icon systems and more)
+            li Git (proficient)
+            li Front-end frameworks such as Bootstrap and Foundation (though I prefer not to use them)
+            li Linux server administration (experienced, semi-proficient)
+            li Meteor, React, and Rails (experienced, semi-proficient)
+            li PHP, SQL, and Elm (experienced, semi-proficient)
+            li Custom integration of designs into best-of-class modern sites (using WordPress, Ghost, Hugo, Jekyll, Harp, Statamic, Kirby, Craft, and others)
+
+      //- EXPERIENCE
+      section.section
+        h3.section--heading Experience
+        .section--body
+
+          //- EXPERIENCE MARKUP
+          mixin expEntry(company, date, url)
+            h5.mb05 #{company}
+              span.t-300.t-xsmall(style="margin: 0 .5rem;") &ndash; 
+              span.t-300.t-xsmall (#{date})
+            .mb2.t-line0
+              a.t-xsmall(href="#{url}") #{url}
+            //- BLURB VIA BLOCK
+            p.mb05
+              block
+            .hr--light.mt2.mb3
+
+          //- EXPERIENCE ENTRIES
+          +expEntry(
+            "Be Heard!",
+            "03/2016 - Current",
+            "https://beheardplugin.com")
+            | An HTML5 audio application/platform engeneered for podcasters. Ships as both a WordPress plugin and an a css/js bundle (for integration with any stack). Built in <a href="http://elm-lang.org/">Elm</a>. (UPDATE: Currently moving this into a third-party-JS/API-based application)
+          +expEntry(
+            "Wesfed", 
+            "11/2015 - Current", 
+            "http://wesfed.com/")
+            | Lead front-end developer. Roles primarily consist of integrating designs and front-end features into new and existing sites running on Rails, Statamic, Kirby, and Craft.
+          +expEntry(
+            "Pixel & Kraft",
+            "02/2014 - Current",
+            "http://pixelandkraft.com")
+            | A theme business run in collaboration with my wife (designer) and I (developer). Through creating premium themes for Ghost and WordPress I've become intimately familiar and productive with both platforms.
+          +expEntry(
+            "The Codestead",
+            "03/2015 - Current",
+            "http://thecodestead.com")
+            | Creator and author of this developer-focused blog/resource site.
+          +expEntry(
+            "cv-Lo",
+            "03/2015",
+            "http://cv-lo.com")
+            | A side-project for learning the React.js library. Harnesses Trello's API to create resumes from Trello boards. Parses a json response into a PDF for print/download.
+          +expEntry(
+            "Niche Booklets",
+            "08/2013 - Current",
+            "http://nichebooklets.net")
+            | An entrepreneurial experiment where I wear many hats: writer, ebook creator, marketer, website creator/maintainer. Notably, created a tool for escaping html <a href="http://nichebooklets.net/description-creator/">here</a>. Monetarily a failure but never-the-less a valuable learning experience/experiment.
+          +expEntry(
+            "B Branded",
+            "Spring 2013",
+            "http://www.bbranded.com")
+            | Worked as lead developer for the "Create Wilmington" project's website (http://createwilmington.com). Implemented the agency's design into a customized WordPress theme and led a training session with the city staff who maintain the site.
+          +expEntry(
+            "Prime Vendor Inc.",
+            "Spring 2013",
+            "http://www.prime-vendor.com")
+            | Worked as an in-house developer integrating designs for their marketing site and several other projects.
+
+      //- EDUCATION
+      section.mb6
+        h3 Education
+        h5.mb0 Warren Wilson College, Asheville, NC
+        .t-small Bachelor of Arts, 2005 - 2009

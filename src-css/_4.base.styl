@@ -1,0 +1,58 @@
+body
+  font-family: 'Titillium', sans-serif
+  line-height: 1.4
+  cursor: default
+  overflow-y: scroll
+  color: $c-type
+  font-weight: 400
+  font-size: 14px
+  +above($bp-default)
+    font-size: 16px
+
+p 
+  font-weight: 300
+  font-size: 16px
+  margin-top: 0
+
+ul, p
+  margin-bottom: $space-4
+ul 
+  margin-left: 0
+  padding-left: 0
+  list-style-position: inside
+
+a.link-blue
+  color: #439DCA
+a 
+  color: inherit
+  &:hover
+    color: lighten($c-type, 37)
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  margin-top: 0
+  line-height: 1.4
+  margin-bottom: $space-1
+
+h1, .h1
+  font-size: 2.25rem
+h2, .h2
+  font-size: 1.75rem
+h3, .h3
+  font-size: 1.5rem
+h4, .h4
+  font-size: 1.2rem
+h5, .h5
+  font-size: 1rem
+h6, .h6
+  font-size: .75rem
+
+
+
+
+
+.contain
+  max-width: 570px
+  mx(auto)
+  +below($bp-default)
+    px(2%)

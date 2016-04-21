@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "harpServer": "harp server -p 7777",
+    "harpCompile": "harp compile",
+    "css-b": "stylus --compress ./src-css/main.styl --out ./public/assets/main.css",
+    "css-w": "stylus --compress --sourcemap --sourcemap-base ./src-css/ --watch ./src-css/main.styl --out ./public/assets/main.css",
+    "bSync": "browser-sync start --port 3003 --proxy 127.0.0.1:7777 --logLevel 'info' --no-ghost-mode --no-open --no-notify --files 'public/**/*.jade' 'public/assets/main.css' ",
+    "serveAndWatch": "npm-run-all --parallel harpServer bSync",
+    "build": "npm-run-all --parallel css-b",
+    "watch": "npm-run-all --parallel css-w serveAndWatch",
+    "prewatch": "npm run build",
+    "start": "npm run watch",
+    "deploy": "surge --domain isaacgregson.com",
+    "predeploy": "npm run build && npm run harpCompile"
+  },
+  "dependencies": {
+    "browser-sync": "^2.12.3",
+    "npm-run-all": "^1.7.0",
+    "stylus": "^0.54.2"
+  }
+}

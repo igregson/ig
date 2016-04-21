@@ -1,0 +1,27 @@
+// SPACE
+
+mx($space)
+  margin-left: $space
+  margin-right: $space
+my($space)
+  margin-top: $space
+  margin-bottom: $space
+px($space)
+  padding-left: $space
+  padding-right: $space
+py($space)
+  padding-top: $space
+  padding-bottom: $space
+  
+
+// MEDIA-QUERIES
+
+above($point)
+  @media screen and (min-width: $point)
+    {block}
+below($point)
+  @media screen and (max-width: $point)
+    {block}  
+between($below, $above)
+  @media screen and (max-width: $below) and (min-width: $above)
+    {block}
