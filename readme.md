@@ -1,3 +1,1 @@
-See `package.json` for relevant tasks.
-
-Served via Surge.sh
+See `package.json` for build and deploy tasks.
