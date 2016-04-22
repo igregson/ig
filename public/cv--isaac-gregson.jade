@@ -109,3 +109,14 @@ block mainPageContent
         h3 Education
         h5.mb0 Warren Wilson College, Asheville, NC
         .t-small Bachelor of Arts, 2005 - 2009
+
+
+block scriptsFooter
+  //- Maybe Print
+  script.
+    var onLoadHashtag = window.location.hash
+    window.onload = function() {
+      if ( (onLoadHashtag !== undefined) && ( onLoadHashtag === '#print') ) {
+        window.print()
+      }
+    }
