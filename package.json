@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.12.3",
+    "harp": "^0.20.3",
     "npm-run-all": "^1.7.0",
     "stylus": "^0.54.2"
   }
