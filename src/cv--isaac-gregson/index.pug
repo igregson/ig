@@ -1,0 +1,115 @@
+extends ./../_layoutMain
+block mainPageContent
+   .Container
+      header.mt2
+         .left
+            h1.h3.mb0 Isaac Gregson
+            h2.h5.t-caps.mb1 Front-end Developer
+            p.t-small.mb0 (704) 516-5751
+            p.t-small.mb0: a(href="mailto:isaac@isaacgregson.com") isaac@isaacgregson.com
+         .right
+            img(src="/../assets/avatar.jpg" style="width: 100px; border-radius: 50%")
+         .clear
+         .hr--light.mt2.mb3
+      main
+         //- Strengths
+         section.section
+            h3.section--heading Soft skills
+            .section--body
+               ul
+                  li Communicating clearly
+                  li Implementing and adhering best practices
+                  li Learning and adopting new technologies
+                  li Being kind and friendly but also staying professional
+                  li Staying focused and productive when working remotely
+         //- Skills
+         section.section
+            h3.section--heading Hard skills
+            .section--body
+               ul
+                  li CSS & pre-processors (Stylus and Sass)
+                  li HTML & pre-processors (Jade, Twig, Liquid, HAML, Ace, and others)
+                  li JavaScript (with or without jQuery, Browserify as preferred bundler)
+                  li Developer workflows and build setups (via gulp/npm)
+                  li SVG (icon systems)
+                  li Git (proficient)
+                  li Angular.js (proficient)
+                  li Vue.js (proficient)
+                  li Integrating designs into best-of-class modern sites (using WordPress, Ghost, Hugo, Jekyll, Harp, Statamic, Kirby, Craft, and others)
+                  li Meteor, React, and Rails (experienced, semi-proficient)
+                  li PHP, SQL, and Elm (experienced, semi-proficient)
+                  li Linux server administration (experienced, semi-proficient)
+         //- Experience
+         section.section
+            h3.section--heading Experience
+            .section--body
+               //- Experience mixin
+               mixin expEntry(company, date, url)
+                  h5.mb05 #{company}
+                     span.t-300.t-xsmall(style="margin: 0 .5rem;") &ndash; 
+                     span.t-300.t-xsmall (#{date})
+                  .mb2.t-line0
+                     a.t-xsmall(href=url) #{url}
+                  //- Blurb via block
+                  p.mb05
+                     block
+                  //- Divider
+                  .hr--light.mt2.mb2-5
+               //- Experience entries
+               +expEntry(
+                  "Azure Standard",
+                  "10/2016 - Current",
+                  "https://azurestandard.com")
+                  | Front-end developer. Work primarily on the company's client-facing e-commerce application which is an Angular 1.x single page application.
+               +expEntry(
+                  "Be Heard!",
+                  "03/2016 - Current",
+                  "https://beheardplugin.com")
+                  | An application/platform engineered for podcasters. Ships as both a WordPress plugin and a css/js bundle (for integration with any stack). Built in <a href="http://elm-lang.org/">Elm</a>. (Note: Currently re-architecting this into a hosted application built with vue.js on the front-end and using firebase on the back-end)
+               +expEntry(
+                  "Wesfed", 
+                  "11/2015 - 2016", 
+                  "http://wesfed.com/")
+                  | Lead front-end developer. Helped the company establish their CSS architecture. Primary role consisted of integrating designs and front-end features into new and existing sites running on Rails, Statamic, Kirby, and Craft.
+               +expEntry(
+                  "Pixel & Kraft",
+                  "02/2014 - Current",
+                  "http://pixelandkraft.com")
+                  | A theme business run in collaboration with my wife (designer) and I (developer). Through crafting premium themes for Ghost and WordPress I've become intimately familiar and productive with both platforms.
+               +expEntry(
+                  "The Codestead",
+                  "03/2015 - Current",
+                  "http://thecodestead.com")
+                  | Creator and author of this developer-focused blog/resource site.
+               +expEntry(
+                  "cv-Lo",
+                  "03/2015",
+                  "http://cv-lo.com")
+                  | A side-project for learning the React.js library. Harnesses Trello's API to create resumes from Trello boards. Parses a json response into a PDF for print/download.
+               +expEntry(
+                  "Niche Booklets",
+                  "08/2013 - 2015",
+                  "http://nichebooklets.net")
+                  | An entrepreneurial experiment where I wore many hats: author, publisher, marketer, & web developer. Notably, created a tool for escaping html <a href="http://nichebooklets.net/description-creator/">here</a>.
+               +expEntry(
+                  "B Branded",
+                  "Spring 2013",
+                  "http://www.bbranded.com")
+                  | Worked as lead developer for the "Create Wilmington" project's website (http://createwilmington.com). Implemented the agency's design into a customized WordPress theme and led a training session with the city staff who maintain the site.
+               +expEntry(
+                  "Prime Vendor Inc.",
+                  "Spring 2013",
+                  "http://www.prime-vendor.com")
+                  | Worked as an in-house developer integrating designs for their marketing site and several other projects.
+         //- Education
+         section.mb6
+            h3 Education
+            h5.mb0 Warren Wilson College, Asheville, NC
+            .t-small Bachelor of Arts, 2005 - 2009
+block scriptsFooter
+   //- Maybe Print
+   script.
+      var onLoadHashtag = window.location.hash
+      window.onload = function() {
+         if (onLoadHashtag && onLoadHashtag === '#print') { window.print() }
+      }
