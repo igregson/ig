@@ -9,7 +9,7 @@
         "b-css": "stylus --print --compress ./src/assets/css/main.styl | postcss --use autoprefixer -b 'last 2 versions' > ./dist/assets/main.css",
         "w-css": "stylus --compress --sourcemap --sourcemap-base ./css/ --watch ./src/assets/css/main.styl --out ./dist/assets/main.css",
         "----MISC----": "----------------------------------------------------------",
-        "misc": "cp src/assets/*{.jpg,.pdf} dist/assets",
+        "misc": "cp src/assets/*.jpg dist/assets && cp src/assets/*.pdf dist/assets",
         "b-misc": "npm run misc",
         "w-misc": "onchange 'src/assets/*{.jpg,.pdf}' -- npm run misc",
         "----SERVE----": "-----------------------------------------------------------",
